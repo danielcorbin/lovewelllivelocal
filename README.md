@@ -8,6 +8,7 @@ Static website for Love Well Connections (lovewellconnections.com). Plain HTML, 
 - `faq.html`: frequently asked questions for members and businesses
 - `future-business-partners.html`: learn more about being a local partner (questions and answers)
 - `partner-application.html`: form for businesses that want to join, with a logo upload. Set `FORM_ENDPOINT` in its script to your own form service address (for example a FormBackend form) so submissions and logos arrive by email. While it is empty, the form opens a ready-to-send email instead.
+- `contact.html`: general contact form. Set `CONTACT_ENDPOINT` in its script to your own form service address (a separate FormBackend form for Love Well).
 - `membership-terms.html` and `privacy-policy.html`: legal pages
 - `robots.txt` and `sitemap.xml`: SEO files (they assume the site lives at https://lovewellconnections.com/)
 

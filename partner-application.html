@@ -241,7 +241,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
             <div class="field"><label for="member">Email of the person who should receive the complimentary membership</label><input id="member" name="Complimentary membership email" type="email" placeholder="name@example.com" autocomplete="off"><p class="hint">Each participating business can designate one person. Leave blank if it is the owner email above.</p></div>
             <div class="field"><label for="how">How did you hear about Love Well. Live Local.?</label><input id="how" name="How they heard" type="text"></div>
             <div class="field"><label for="more">Anything else you would like us to know?</label><textarea id="more" name="Anything else" rows="3"></textarea></div>
-            <div class="field"><label for="logo">Business logo</label><input id="logo" name="logo" type="file" accept="image/*,.pdf,.svg"><p class="hint">A PNG with a transparent background works best. Maximum size 5 MB. If you do not have it handy, you can email it later to <a href="mailto:lovewellconnections@gmail.com">lovewellconnections@gmail.com</a>.</p></div>
+            <div class="field"><label for="logo">Business logo</label><input id="logo" name="logo" type="file" accept="image/*,.pdf,.svg"></div>
           </fieldset>
 
           <div class="field ack"><label class="check"><input id="ack" type="checkbox" name="Acknowledgment" value="Yes" required> <span>I understand that the business description and member benefit I provide will be shown on the Love Well. Live Local. website and in the Member Portal, and that Love Well Connections will follow up with the business agreement. <span class="req">(required)</span></span></label></div>
@@ -255,7 +255,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
           <h2>Thank you!</h2>
           <p id="thanksMsg"></p>
           <div id="fallback" hidden>
-            <p>If your email app did not open, copy the details below and send them to <a href="mailto:lovewellconnections@gmail.com">lovewellconnections@gmail.com</a>.</p>
+            <p>If your email app did not open, copy the details below and send them to us by email.</p>
             <textarea id="summary" rows="10" readonly></textarea>
             <p><button class="btn btn-line" type="button" id="copyBtn">Copy details</button> <span id="copied" role="status"></span></p>
           </div>
@@ -274,6 +274,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
       <div class="foot-links">
         <a href="local-partners.html">Local Partners</a>
         <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
         <a href="https://www.facebook.com/lovewelllivelocal">Facebook</a>
         <a href="https://www.instagram.com/love_well_live_local/">Instagram</a>
         <a href="membership-terms.html">Membership Terms</a>
@@ -374,7 +375,7 @@ var EMAIL_TO = "lovewellconnections@gmail.com";
       submitBtn.disabled = true; submitBtn.textContent = "Sending...";
       fetch(FORM_ENDPOINT, { method: "POST", body: fd, headers: { "Accept": "application/json" } })
         .then(function (r) { if (!r.ok) throw new Error("bad response"); done("Your information was sent. We appreciate you wanting to be part of Love Well. Live Local.", false, logoFile ? "Your logo was included." : "Please email us a copy of your logo when you can."); })
-        .catch(function () { submitBtn.disabled = false; submitBtn.textContent = "Submit my information"; showError("We could not send the form just now. Please try again, or email your information to " + EMAIL_TO + ".", null); });
+        .catch(function () { submitBtn.disabled = false; submitBtn.textContent = "Submit my information"; showError("We could not send the form just now. Please try again in a moment, or use the contact form.", null); });
     } else {
       var subject = "New Local Partner Request: " + val("bizName");
       window.location.href = "mailto:" + EMAIL_TO + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(text);
