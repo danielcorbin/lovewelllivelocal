@@ -219,6 +219,29 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
   html { scroll-behavior: auto; }
   .btn { transition: none; }
 }
+
+/* Mobile menu */
+.menu-btn { display: none; align-items: center; gap: 10px; min-height: 44px; padding: 8px 14px; background: transparent; color: var(--navy); border: 2px solid var(--navy); border-radius: 3px; font: 700 0.8rem/1 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; }
+.menu-btn .bars { display: inline-block; width: 18px; height: 12px; background: linear-gradient(var(--navy) 0 2px, transparent 2px 5px, var(--navy) 5px 7px, transparent 7px 10px, var(--navy) 10px 12px); }
+.site-header.open .menu-btn .bars { background: linear-gradient(45deg, transparent 45%, var(--navy) 45% 55%, transparent 55%), linear-gradient(-45deg, transparent 45%, var(--navy) 45% 55%, transparent 55%); height: 14px; }
+.menu-panel { flex: 1 1 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px; }
+@media (max-width: 900px) {
+  body { overflow-wrap: break-word; }
+  .site-header .bar { flex-wrap: nowrap; position: relative; padding: 10px 0; }
+  .logo img { height: 38px; max-width: 62vw; object-fit: contain; }
+  .menu-btn { display: inline-flex; flex: none; }
+  .menu-panel { display: none; position: absolute; top: 100%; left: -20px; right: -20px; flex-direction: column; align-items: stretch; flex-wrap: nowrap; gap: 18px; padding: 8px 20px 22px; background: var(--paper); border-bottom: 3px solid var(--terra); box-shadow: 0 18px 30px -18px rgba(15, 32, 56, 0.5); max-height: calc(100vh - 70px); overflow-y: auto; }
+  .site-header.open .menu-panel { display: flex; }
+  .nav { flex-direction: column; align-items: stretch; flex-wrap: nowrap; gap: 0; }
+  .nav a { display: block; padding: 15px 2px; font-size: 0.9rem; border-bottom: 1px solid var(--sand); }
+  .menu-panel .cta-row { flex-direction: column; }
+  .menu-panel .cta-row .btn, .bar .menu-panel .btn { text-align: center; padding: 15px 16px; }
+  .grid { grid-template-columns: 1fr; }
+  .search input { font-size: 16px; flex-basis: 100%; }
+  .chip { padding: 12px 15px; min-height: 44px; }
+  .btn { min-height: 44px; }
+  .foot-links a { padding: 6px 0; display: inline-block; }
+}
 </style>
 </head>
 <body>
@@ -236,6 +259,8 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
 <header class="site-header">
   <div class="wrap bar">
     <a class="logo" href="#top" aria-label="Love Well. Live Local. home" id="headerLogo"></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button>
+    <div class="menu-panel" id="menuPanel">
     <nav class="nav" aria-label="Main">
       <a href="#how">How it works</a>
       <a href="#partners">Local partners</a>
@@ -246,6 +271,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
     <div class="cta-row">
       <a class="btn btn-line" href="https://payhip.com/auth/login">Member sign in</a>
       <a class="btn btn-terra" href="https://payhip.com/order?link=02fOD&amp;pricing_plan=QyBbwVQDGD">Become a member</a>
+    </div>
     </div>
   </div>
 </header>
@@ -430,7 +456,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
       <h2>Own a local business? Join your neighbors.</h2>
       <p style="margin-top:16px">We are building a network of small businesses that offer special benefits to members. If you own one, or want to recommend a favorite, we would love to hear from you.</p>
       <div class="cta-row">
-        <a class="btn btn-terra" href="https://lovewellconnections.com/future-business-partners">Partner questions and answers</a>
+        <a class="btn btn-terra" href="future-business-partners.html">Partner questions and answers</a>
       </div>
       <p class="contact-line">Email <a href="mailto:lovewellconnections@gmail.com">lovewellconnections@gmail.com</a></p>
     </div>
@@ -929,6 +955,16 @@ $("reset").addEventListener("click", function () {
 });
 $("heroCount").textContent = PARTNERS.length;
 render();
+
+(function () {
+  var header = document.querySelector(".site-header"), btn = document.getElementById("menuBtn");
+  if (!header || !btn) return;
+  function setOpen(o) { header.classList.toggle("open", o); btn.setAttribute("aria-expanded", o ? "true" : "false"); btn.querySelector(".lbl").textContent = o ? "Close" : "Menu"; }
+  btn.addEventListener("click", function () { setOpen(!header.classList.contains("open")); });
+  document.getElementById("menuPanel").addEventListener("click", function (e) { if (e.target.closest("a")) setOpen(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && header.classList.contains("open")) { setOpen(false); btn.focus(); } });
+  window.addEventListener("resize", function () { if (window.innerWidth > 900) setOpen(false); });
+})();
 </script>
 </body>
 </html>

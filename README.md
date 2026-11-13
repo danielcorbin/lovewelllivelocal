@@ -4,6 +4,7 @@ Static website for Love Well Connections (lovewellconnections.com). Plain HTML, 
 
 ## Files
 - `index.html`: home page, partner directory with search, category, county and town filters
+- `future-business-partners.html`: partner questions and answers
 - `membership-terms.html` and `privacy-policy.html`: legal pages
 - `robots.txt` and `sitemap.xml`: SEO files (they assume the site lives at https://lovewellconnections.com/)
 
