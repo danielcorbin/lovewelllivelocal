@@ -250,8 +250,8 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
   .postcard-inner { position: relative; grid-template-columns: 1fr; grid-template-rows: auto auto; }
   .pc-address { display: contents; }
   .stamp-row { grid-area: 1 / 1; justify-self: end; align-self: start; position: relative; width: 156px; height: 112px; margin: 14px 12px 0 0; z-index: 1; display: block; }
-  .postmark { position: absolute; left: 0; top: 10px; width: 88px; height: 88px; }
-  .stamp { position: absolute; right: 6px; top: 6px; width: 78px; padding: 6px; border-width: 2px; outline-width: 2px; outline-offset: 4px; }
+  .postmark { position: absolute; left: -6px; top: 14px; width: 96px; height: 96px; z-index: 2; pointer-events: none; }
+  .stamp { position: absolute; right: 6px; top: 6px; z-index: 1; width: 78px; padding: 6px; border-width: 2px; outline-width: 2px; outline-offset: 4px; }
   .stamp svg { width: 34px; height: 34px; margin-bottom: 2px; }
   .stamp .price { font-size: 1.05rem; }
   .stamp .per { font-size: 0.5rem; letter-spacing: 0.06em; margin-top: 2px; }
