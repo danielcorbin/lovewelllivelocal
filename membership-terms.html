@@ -134,7 +134,8 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
     <div class="menu-panel" id="menuPanel">
     <nav class="nav" aria-label="Main">
       <a href="index.html#how">How it works</a>
-      <a href="index.html#partners">Local partners</a>
+      <a href="local-partners.html">Local partners</a>
+      <a href="faq.html">FAQ</a>
       <a href="index.html#story">Our story</a>
       <a href="index.html#membership">Membership</a>
       <a href="index.html#businesses">For businesses</a>
@@ -203,6 +204,8 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
     <div class="foot-top">
       <a class="logo" href="index.html" aria-label="Love Well. Live Local. home" id="footerLogo"></a>
       <div class="foot-links">
+        <a href="local-partners.html">Local Partners</a>
+        <a href="faq.html">FAQ</a>
         <a href="https://www.facebook.com/lovewelllivelocal">Facebook</a>
         <a href="https://www.instagram.com/love_well_live_local/">Instagram</a>
         <a href="membership-terms.html">Membership Terms</a>
@@ -214,6 +217,16 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
 </footer>
 
 <script>
+/* Always open a page at the top, unless the link points to a section (#how, #story and so on). */
+(function () {
+  if (window.location.hash) return;
+  try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+  var root = document.documentElement, prev = root.style.scrollBehavior;
+  root.style.scrollBehavior = "auto";
+  window.scrollTo(0, 0);
+  root.style.scrollBehavior = prev;
+  window.addEventListener("pageshow", function () { if (!window.location.hash) window.scrollTo(0, 0); });
+})();
 /* Same logo files as the home page. If one cannot load, a text wordmark appears instead. */
 var LOGO_DARK  = "https://img1.wsimg.com/isteam/ip/a1480e91-4706-41df-b269-f6712bc0cac3/HorizFull_Love%20Well%20dark-b205c82.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1628,cg:true";
 var LOGO_LIGHT = "https://img1.wsimg.com/isteam/ip/a1480e91-4706-41df-b269-f6712bc0cac3/HorizFull_Love%20Well%20light-33d392f.png/:/rs=w:1280,h:162";
