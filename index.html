@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Love Well. Live Local. | Local Discount Membership in Raleigh, NC</title>
-<meta name="description" content="Join Love Well. Live Local. for $29.95 every three months and save at independent small businesses across Raleigh, Wake Forest, Cary and the Triangle. Browse local partners by category or town.">
+<meta name="description" content="Join Love Well. Live Local. for $29.95 every three months and save at independent small businesses across Raleigh, Wake Forest, Cary and the Triangle.">
 <!--SEO-START-->
 <link rel="canonical" href="https://lovewellconnections.com/">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -12,13 +12,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Love Well. Live Local.">
 <meta property="og:title" content="Love Well. Live Local. | Local Discount Membership in Raleigh, NC">
-<meta property="og:description" content="Join Love Well. Live Local. for $29.95 every three months and save at independent small businesses across Raleigh, Wake Forest, Cary and the Triangle. Browse local partners by category or town.">
+<meta property="og:description" content="Join Love Well. Live Local. for $29.95 every three months and save at independent small businesses across Raleigh, Wake Forest, Cary and the Triangle.">
 <meta property="og:url" content="https://lovewellconnections.com/">
 <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/a1480e91-4706-41df-b269-f6712bc0cac3/HorizFull_Love%20Well%20dark-b205c82.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1628,cg:true">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Love Well. Live Local. | Local Discount Membership in Raleigh, NC">
-<meta name="twitter:description" content="Join Love Well. Live Local. for $29.95 every three months and save at independent small businesses across Raleigh, Wake Forest, Cary and the Triangle. Browse local partners by category or town.">
+<meta name="twitter:description" content="Join Love Well. Live Local. for $29.95 every three months and save at independent small businesses across Raleigh, Wake Forest, Cary and the Triangle.">
 <meta name="twitter:image" content="https://img1.wsimg.com/isteam/ip/a1480e91-4706-41df-b269-f6712bc0cac3/HorizFull_Love%20Well%20dark-b205c82.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1628,cg:true">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://lovewellconnections.com/#org", "name": "Love Well Connections", "alternateName": "Love Well. Live Local.", "url": "https://lovewellconnections.com/", "logo": "https://img1.wsimg.com/isteam/ip/a1480e91-4706-41df-b269-f6712bc0cac3/HorizFull_Love%20Well%20dark-b205c82.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1628,cg:true", "address": {"@type": "PostalAddress", "streetAddress": "1166 Lamplighter Dr", "addressLocality": "Raleigh", "addressRegion": "NC", "postalCode": "27604", "addressCountry": "US"}, "areaServed": ["Wake County, NC", "Johnston County, NC", "Franklin County, NC"], "sameAs": ["https://www.facebook.com/lovewelllivelocal", "https://www.instagram.com/love_well_live_local/"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "url": "https://lovewellconnections.com/contact.html"}}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://lovewellconnections.com/#site", "url": "https://lovewellconnections.com/", "name": "Love Well. Live Local.", "publisher": {"@id": "https://lovewellconnections.com/#org"}}, {"@context": "https://schema.org", "@type": "Service", "name": "Love Well. Live Local. Membership", "serviceType": "Local business discount membership", "provider": {"@id": "https://lovewellconnections.com/#org"}, "areaServed": "Raleigh, NC and the Triangle", "offers": {"@type": "Offer", "price": "29.95", "priceCurrency": "USD", "url": "https://payhip.com/order?link=02fOD&pricing_plan=QyBbwVQDGD", "description": "Three-month membership, renews every three months"}}]</script>
 <!--SEO-END-->
@@ -77,6 +77,7 @@ p { margin: 0; }
 .nav { display: flex; flex-wrap: wrap; gap: 4px 22px; align-items: center; }
 .nav a { color: var(--navy); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; padding: 6px 0; border-bottom: 2px solid transparent; }
 .nav a:hover { border-bottom-color: var(--terra); }
+.nav a[aria-current="page"] { border-bottom-color: var(--terra); }
 .btn { display: inline-block; font: 700 0.82rem/1 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; padding: 14px 22px; border-radius: 3px; border: 2px solid var(--navy); transition: transform .15s ease; }
 .btn:hover { transform: translateY(-2px); }
 .btn-solid { background: var(--navy); color: var(--paper); }
@@ -183,6 +184,12 @@ section { padding: 64px 0; }
 .pull { background: var(--navy); color: var(--paper); padding: clamp(28px, 4vw, 44px); border: 8px double var(--sage); display: grid; gap: 14px; align-content: center; min-height: 100%; }
 .pull .big { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; }
 .pull .script { font-family: var(--font-script); font-size: 2rem; color: #e9c9bd; }
+.story-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr) minmax(0, 0.8fr); gap: clamp(22px, 3vw, 40px); align-items: stretch; }
+.story-grid .pull { min-height: 0; align-content: start; padding: clamp(24px, 2.6vw, 34px); }
+.story-grid .pull .big { font-size: clamp(1.25rem, 1.9vw, 1.6rem); }
+.story-grid .pull p:not(.big) { font-size: 0.98rem; opacity: 0.92; }
+.pull.pull-local { background: var(--terra-deep); border-color: #c9a89a; }
+
 
 .price-card { background: var(--paper); border: 1px solid var(--sand); padding: 30px; display: grid; gap: 16px; position: sticky; top: 90px; }
 .price-card .amount { font-family: var(--font-display); font-size: 3.4rem; font-weight: 700; color: var(--navy); line-height: 1; }
@@ -212,7 +219,8 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
 @media (max-width: 860px) {
   .postcard-inner { grid-template-columns: 1fr; }
   .pc-message { border-right: none; border-bottom: 2px dashed var(--sand); }
-  .two-col, .biz { grid-template-columns: 1fr; }
+  .two-col, .biz, .story-grid { grid-template-columns: 1fr; }
+  .story-grid .pull-love { order: 1; } .story-grid .story-main { order: 2; } .story-grid .pull-local { order: 3; }
   .price-card { position: static; }
   .stamp-row { justify-content: flex-start; }
 }
@@ -274,6 +282,8 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
 .chip-link:hover { border-color: var(--terra); }
 .teaser-cta { margin-top: 32px; }
 </style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230f2038%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Georgia,serif%27 font-size=%2730%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23f3ece3%27%3ELW%3C/text%3E%3C/svg%3E">
+<meta property="og:image:alt" content="Love Well. Live Local. logo">
 </head>
 <body>
 
@@ -293,17 +303,17 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
     <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button>
     <div class="menu-panel" id="menuPanel">
     <nav class="nav" aria-label="Main">
-      <a href="#how">How it works</a>
-      <a href="local-partners.html">Local partners</a>
-      <a href="faq.html">FAQ</a>
       <a href="#story">Our story</a>
+      <a href="#how">How it works</a>
       <a href="#membership">Membership</a>
+      <a href="local-partners.html">Partner Directory</a>
+      <a href="faq.html">FAQ</a>
       <a href="#businesses">For businesses</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="cta-row">
-      <a class="btn btn-line" href="https://payhip.com/auth/login">Member sign in</a>
-      <a class="btn btn-terra" href="https://payhip.com/order?link=02fOD&amp;pricing_plan=QyBbwVQDGD">Become a member</a>
+      <a class="btn btn-line" href="https://payhip.com/auth/login" target="_blank" rel="noopener">Member sign in</a>
+      <a class="btn btn-terra" href="https://payhip.com/order?link=02fOD&amp;pricing_plan=QyBbwVQDGD" target="_blank" rel="noopener">Become a member</a>
     </div>
     </div>
   </div>
@@ -321,8 +331,8 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
           <h1>Support Local. Save Local. <em>Love Well.</em></h1>
           <p class="lede">One membership, exclusive savings at small businesses across the Triangle. They support you. You support them. Together, we love well.</p>
           <div class="cta-row">
-            <a class="btn btn-solid" href="https://payhip.com/order?link=02fOD&amp;pricing_plan=QyBbwVQDGD">Become a member</a>
-            <a class="btn btn-line" href="local-partners.html">Browse 32 local partners</a>
+            <a class="btn btn-solid" href="https://payhip.com/order?link=02fOD&amp;pricing_plan=QyBbwVQDGD" target="_blank" rel="noopener">Become a member</a>
+            <a class="btn btn-line" href="local-partners.html" target="_blank" rel="noopener">Browse local partners</a>
           </div>
         </div>
         <div class="pc-address">
@@ -375,9 +385,9 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
     <div class="section-head">
       <p class="eyebrow">Participating businesses</p>
       <h2>Find a neighbor to support</h2>
-      <p>32 independent local businesses offer member benefits, from health and wellness to hair, home services and bakeries. Search by name or service, or browse by category.</p>
+      <p>Independent local businesses offer member benefits, from health and wellness to hair, home services and bakeries. Search by name or service, or browse by category.</p>
     </div>
-    <form class="home-search" action="local-partners.html" method="get" role="search">
+    <form class="home-search" action="local-partners.html" method="get" role="search" target="_blank">
       <label for="homeQ">Search partners</label>
       <div class="home-search-row">
         <input id="homeQ" name="q" type="search" placeholder="Try &quot;doctor&quot;, &quot;haircut&quot; or &quot;Wake Forest&quot;" autocomplete="off">
@@ -385,15 +395,20 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
       </div>
     </form>
     <p class="browse-label">Or browse a category</p>
-    <div class="chip-links"><a class="chip-link" href="local-partners.html?cat=0">Health &amp; Wellness</a><a class="chip-link" href="local-partners.html?cat=1">Home Improvement &amp; Property</a><a class="chip-link" href="local-partners.html?cat=2">Beauty &amp; Self Care</a><a class="chip-link" href="local-partners.html?cat=3">Food &amp; Beverage</a><a class="chip-link" href="local-partners.html?cat=4">Family &amp; Lifestyle</a><a class="chip-link" href="local-partners.html?cat=5">Shopping &amp; Gifts</a></div>
-    <p class="teaser-cta"><a class="btn btn-terra" href="local-partners.html">See all 32 local partners</a></p>
+    <div class="chip-links"><a class="chip-link" href="local-partners.html?cat=0" target="_blank" rel="noopener">Health &amp; Wellness</a><a class="chip-link" href="local-partners.html?cat=1" target="_blank" rel="noopener">Home Improvement &amp; Property</a><a class="chip-link" href="local-partners.html?cat=2" target="_blank" rel="noopener">Beauty &amp; Self Care</a><a class="chip-link" href="local-partners.html?cat=3" target="_blank" rel="noopener">Food &amp; Beverage</a><a class="chip-link" href="local-partners.html?cat=4" target="_blank" rel="noopener">Family &amp; Lifestyle</a><a class="chip-link" href="local-partners.html?cat=5" target="_blank" rel="noopener">Shopping &amp; Gifts</a></div>
+    <p class="teaser-cta"><a class="btn btn-terra" href="local-partners.html" target="_blank" rel="noopener">See all local partners</a></p>
   </div>
 </section>
 
 <!-- STORY -->
 <section id="story" class="band">
-  <div class="wrap two-col">
-    <div>
+  <div class="wrap story-grid">
+    <div class="pull pull-love">
+      <span class="script">Love Well.</span>
+      <p class="big">Our hope is to help you create meaningful connections in your community, so you can focus on what matters most: loving well.</p>
+      <p>The first membership community is open in Raleigh and neighboring towns, with more North Carolina communities planned as the program grows.</p>
+    </div>
+    <div class="story-main">
       <div class="section-head">
         <p class="eyebrow">Our story</p>
         <h2>Loving well begins with connection</h2>
@@ -404,10 +419,10 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
         <p>The Love Well. Live Local initiative makes that possible by loving well through shopping local. By partnering with small businesses and service providers, we connect members with exclusive discounts and savings. In return, each connection supports a local livelihood, a dream, and the community we share.</p>
       </div>
     </div>
-    <div class="pull">
-      <span class="script">Love Well.</span>
-      <p class="big">Our hope is to help you create meaningful connections in your community, so you can focus on what matters most: loving well.</p>
-      <p>The first membership community is open in Raleigh and neighboring towns, with more North Carolina communities planned as the program grows.</p>
+    <div class="pull pull-local">
+      <span class="script">Live Local.</span>
+      <p class="big">Every purchase at a neighborhood business supports a local livelihood, a dream, and the community we share.</p>
+      <p>Participating businesses are independently owned, from health and wellness to hair, home services and bakeries.</p>
     </div>
   </div>
 </section>
@@ -440,9 +455,9 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
       <p class="eyebrow">Founding membership</p>
       <p class="amount">$29.95 <span>every three months</span></p>
       <p>Renews automatically every three months unless you cancel before your next renewal date. The founding rate continues as long as you stay a member.</p>
-      <a class="btn btn-terra" href="https://payhip.com/order?link=02fOD&amp;pricing_plan=QyBbwVQDGD">Become a member</a>
-      <a class="btn btn-line" href="https://payhip.com/auth/login">Already a member? Sign in</a>
-      <p class="fine">Please review the <a href="membership-terms.html">Membership Terms &amp; Conditions</a> and <a href="privacy-policy.html">Privacy Policy</a> before joining. Purchasing a membership means you agree to them.</p>
+      <a class="btn btn-terra" href="https://payhip.com/order?link=02fOD&amp;pricing_plan=QyBbwVQDGD" target="_blank" rel="noopener">Become a member</a>
+      <a class="btn btn-line" href="https://payhip.com/auth/login" target="_blank" rel="noopener">Already a member? Sign in</a>
+      <p class="fine">Please review the <a href="membership-terms.html" target="_blank" rel="noopener">Membership Terms &amp; Conditions</a> and <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> before joining. Purchasing a membership means you agree to them.</p>
     </aside>
   </div>
 </section>
@@ -453,11 +468,11 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
     <div>
       <p class="eyebrow">For local businesses</p>
       <h2>Own a local business? Join your neighbors.</h2>
-      <p style="margin-top:16px">We are building a network of small businesses that offer special benefits to members. If you own one, or want to recommend a favorite, we would love to hear from you.</p>
+      <p style="margin-top:16px">We are building a network of small businesses that offer special benefits to members. We ask participating businesses to offer an ongoing discount or benefit that members can use again and again, rather than a one-time offer. If you own a small business, or want to recommend a favorite, we would love to hear from you.</p>
       <div class="cta-row">
-        <a class="btn btn-terra" href="future-business-partners.html">Learn more about being a local partner</a>
+        <a class="btn btn-terra" href="future-business-partners.html" target="_blank" rel="noopener">Learn more about being a local partner</a>
       </div>
-      <p class="contact-line">Questions? <a href="contact.html">Contact us</a></p>
+      <p class="contact-line">Questions? <a href="contact.html" target="_blank" rel="noopener">Contact us</a></p>
     </div>
     <div class="pull" style="border-color: var(--sage)">
       <span class="script">Support Local.</span>
@@ -473,13 +488,13 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
     <div class="foot-top">
       <a class="logo" href="#top" aria-label="Love Well. Live Local. home" id="footerLogo"></a>
       <div class="foot-links">
-        <a href="local-partners.html">Local Partners</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://www.facebook.com/lovewelllivelocal">Facebook</a>
-        <a href="https://www.instagram.com/love_well_live_local/">Instagram</a>
-        <a href="membership-terms.html">Membership Terms</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="local-partners.html" target="_blank" rel="noopener">Partner Directory</a>
+        <a href="faq.html" target="_blank" rel="noopener">FAQ</a>
+        <a href="contact.html" target="_blank" rel="noopener">Contact</a>
+        <a href="https://www.facebook.com/lovewelllivelocal" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/love_well_live_local/" target="_blank" rel="noopener">Instagram</a>
+        <a href="membership-terms.html" target="_blank" rel="noopener">Membership Terms</a>
+        <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>
       </div>
     </div>
     <small>Copyright &copy; 2026 Love Well Connections. All rights reserved.</small>
