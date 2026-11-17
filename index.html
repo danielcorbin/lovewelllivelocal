@@ -44,6 +44,8 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+/* keep section headings clear of the sticky header when menu links jump to them */
+section[id] { scroll-margin-top: 108px; }
 body {
   margin: 0;
   background: var(--cream);
@@ -219,6 +221,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
 @media (max-width: 860px) {
   .postcard-inner { grid-template-columns: 1fr; }
   .pc-message { border-right: none; border-bottom: 2px dashed var(--sand); }
+  section[id] { scroll-margin-top: 22px; }
   .two-col, .biz, .story-grid { grid-template-columns: 1fr; }
   .story-grid .pull-love { order: 1; } .story-grid .story-main { order: 2; } .story-grid .pull-local { order: 3; }
   .price-card { position: static; }
