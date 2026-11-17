@@ -302,7 +302,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
 
 <header class="site-header">
   <div class="wrap bar">
-    <a class="logo" href="#top" aria-label="Love Well. Live Local. home" id="headerLogo"></a>
+    <a class="logo" href="#" aria-label="Love Well. Live Local. home" id="headerLogo"></a>
     <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button>
     <div class="menu-panel" id="menuPanel">
     <nav class="nav" aria-label="Main">
@@ -489,7 +489,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
 <footer>
   <div class="wrap foot">
     <div class="foot-top">
-      <a class="logo" href="#top" aria-label="Love Well. Live Local. home" id="footerLogo"></a>
+      <a class="logo" href="#" aria-label="Love Well. Live Local. home" id="footerLogo"></a>
       <div class="foot-links">
         <a href="local-partners.html" target="_blank" rel="noopener">Partner Directory</a>
         <a href="faq.html" target="_blank" rel="noopener">FAQ</a>
@@ -549,6 +549,13 @@ mountLogo(document.getElementById("footerLogo"), LOGO_LIGHT);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && header.classList.contains("open")) { setOpen(false); btn.focus(); } });
   window.addEventListener("resize", function () { if (window.innerWidth > 900) setOpen(false); });
 })();
+</script>
+<script>
+/* Logo links jump to the very top of the page (not just to the start of the main content). */
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest("a.logo");
+  if (a && a.getAttribute("href") === "#") { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); if (history.replaceState) history.replaceState(null, "", location.pathname + location.search); }
+});
 </script>
 </body>
 </html>
