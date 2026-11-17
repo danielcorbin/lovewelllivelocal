@@ -162,6 +162,10 @@ section { padding: 64px 0; }
 .card-top { display: flex; gap: 14px; align-items: center; }
 .logo-tile { width: 62px; height: 62px; flex: none; border: 1.5px dashed var(--sage); background: var(--cream); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--terra-deep); overflow: hidden; }
 .logo-tile img { width: 100%; height: 100%; object-fit: contain; }
+.logo-banner { box-sizing: border-box; height: 150px; display: flex; align-items: center; justify-content: center; background: var(--cream); border: 1px solid var(--sand); padding: 12px; overflow: hidden; }
+.logo-banner img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.logo-banner .initials { font-family: var(--font-display); font-weight: 700; font-size: 2rem; color: var(--terra-deep); }
+
 .card h3 { font-size: 1.22rem; }
 .meta { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 0.82rem; color: #4a5160; margin-top: 4px; }
 .meta .pin { color: var(--terra-deep); font-weight: 700; }
@@ -440,58 +444,58 @@ var CATEGORIES = [
 
 var PARTNERS = [
   /* Health & Wellness */
-  { name: "Meliora Wellness", cat: 0, town: "Raleigh", county: "Wake", logo: "", url: "http://meliorawellnessnc.com",
+  { name: "Meliora Wellness", cat: 0, town: "Raleigh", county: "Wake", logo: "images/partners/meliora-wellness.webp", url: "http://meliorawellnessnc.com",
     desc: "Medical, aesthetic and wellness services, including IV therapy, laser services and weight loss support.",
     offer: "$25 off any service or treatment" },
-  { name: "Staywell Health", cat: 0, town: "Raleigh", county: "Wake", logo: "", url: "http://staywellforlife.com",
+  { name: "Staywell Health", cat: 0, town: "Raleigh", county: "Wake", logo: "images/partners/staywell-health.webp", url: "http://staywellforlife.com",
     desc: "Root-cause, whole-person primary and functional care with regenerative therapies and hormone optimization.",
-    offer: "Membership registration fee waived ($50 per person, up to $100 per family) and 10% off one functional medicine program",
+    offer: "Membership registration fee waived ($50 per person, up to $100 per family), 10% off one functional medicine program, and 5% off recurring monthly primary care membership dues",
     note: "Not combined with other discounts or offers." },
-  { name: "Blueprint Thermography", cat: 0, town: "Raleigh", county: "Wake", logo: "", url: "http://blueprintthermography.com",
+  { name: "Blueprint Thermography", cat: 0, town: "Raleigh", county: "Wake", logo: "images/partners/blueprint-thermography.webp", url: "http://blueprintthermography.com",
     desc: "Radiation-free full-body thermal imaging that maps patterns across the body.",
     offer: "20% off any imaging package", note: "Not combined with any other offer." },
-  { name: "Denise Souza Integrated Wellness", cat: 0, town: "Raleigh", county: "Wake", logo: "", url: "http://denisesouzaintegrativewellness.com",
+  { name: "Denise Souza Integrated Wellness", cat: 0, town: "Raleigh", county: "Wake", logo: "images/partners/denise-souza-integrated-wellness.webp", url: "http://denisesouzaintegrativewellness.com",
     desc: "Wellness strategy using bioresonance, frequency scanning and pattern plotting.",
     offer: "Free Inner Voice Scan, full report, personalized audio tones and consultation ($125 value)" },
-  { name: "The Y'Ville Well", cat: 0, town: "Youngsville", county: "Franklin", logo: "", url: "https://www.theyvillewell.com/",
+  { name: "The Y'Ville Well", cat: 0, town: "Youngsville", county: "Franklin", logo: "images/partners/the-yville-well.webp", url: "https://www.theyvillewell.com/",
     desc: "A home away from home to rest, replenish and restore, with classes and wellness sessions.",
     offer: "10% off classes and one free 20 minute vibroacoustic wellness session" },
-  { name: "Reclaim Holistic", cat: 0, town: "Raleigh", county: "Wake", logo: "", url: "http://reclaimholistic.com",
+  { name: "Reclaim Holistic", cat: 0, town: "Raleigh", county: "Wake", logo: "images/partners/reclaim-holistic.webp", url: "http://reclaimholistic.com",
     desc: "Holistic nutrition practice for lasting, sustainable change.",
     offer: "15% off any single session, 20% off any single package", note: "Excludes lab work." },
-  { name: "Health with Hope", cat: 0, town: "Raleigh", county: "Wake", logo: "", url: "http://healthwithhoperaleigh.com",
+  { name: "Health with Hope", cat: 0, town: "Raleigh", county: "Wake", logo: "images/partners/health-with-hope.webp", url: "http://healthwithhoperaleigh.com",
     desc: "Lymphatic drainage massage to support your body's natural processes.",
     offer: "$25 off your first lymphatic drainage session as a new client, plus 10% off one session per month", more: true },
-  { name: "BioPeak Health", cat: 0, town: "Raleigh", county: "Wake", logo: "", url: "http://biopeakhealth.com",
+  { name: "BioPeak Health", cat: 0, town: "Raleigh", county: "Wake", logo: "images/partners/biopeak-health.webp", url: "http://biopeakhealth.com",
     desc: "Root-cause care so your brain and body can perform at their peak.",
     offer: "50% off your initial visit, 30% off care plan packages", note: "Excludes supplements, genetic and metabolic testing." },
-  { name: "Golden Ginkgo", cat: 0, town: "Youngsville", county: "Franklin", logo: "", url: "https://www.goldenginkgohrw.com/",
+  { name: "Golden Ginkgo", cat: 0, town: "Youngsville", county: "Franklin", logo: "images/partners/golden-ginkgo.webp", url: "https://www.goldenginkgohrw.com/",
     desc: "Woman-owned wellness practice offering reflexology, Reiki and hybrid sessions.",
     offer: "10% off foot, facial or hand reflexology, and 10% off a restorative Reiki session", note: "Not valid with packages or other discounts." },
-  { name: "Divine Light Energy Healing", cat: 0, town: "Youngsville", county: "Franklin", logo: "", url: "https://www.divinelightenergyhealing.com/",
+  { name: "Divine Light Energy Healing", cat: 0, town: "Youngsville", county: "Franklin", logo: "images/partners/divine-light-energy-healing.webp", url: "https://www.divinelightenergyhealing.com/",
     desc: "Holistic sessions to balance energy and mind, release stress and find peace.",
     offer: "10% off any single Reiki, soul alignment, hypnosis or past life regression session", note: "Limited to one service per person.", more: true },
-  { name: "Divine Holistic Wellness", cat: 0, town: "Youngsville", county: "Franklin", logo: "", url: "https://www.divineholisticwellness.org/",
+  { name: "Divine Holistic Wellness", cat: 0, town: "Youngsville", county: "Franklin", logo: "images/partners/divine-holistic-wellness.webp", url: "https://www.divineholisticwellness.org/",
     desc: "Bodywork that brings mobility back, led by the Signature Mobility Massage.",
     offer: "$20 off your initial service, $10 off continued services" },
-  { name: "Restore PT & Wellness", cat: 0, town: "Cary", county: "Wake", mobile: true, logo: "", url: "https://restoreptcary.com/",
+  { name: "Restore PT & Wellness", cat: 0, town: "Cary", county: "Wake", mobile: true, logo: "images/partners/restore-pt-and-wellness.webp", url: "https://restoreptcary.com/",
     desc: "Physical therapy led by a board-certified exercise expert with over 30 years of clinical experience.",
     offer: "15% off your initial comprehensive evaluation" },
 
   /* Home Improvement & Property */
-  { name: "Eckspert Home Remodeling", cat: 1, town: "", county: "", regional: true, mobile: true, logo: "", url: "https://www.facebook.com/profile.php?id=61571549695396", urlLabel: "Visit on Facebook",
+  { name: "Eckspert Home Remodeling", cat: 1, town: "", county: "", regional: true, mobile: true, logo: "images/partners/eckspert-home-remodeling.webp", url: "https://www.facebook.com/profile.php?id=61571549695396", urlLabel: "Visit on Facebook",
     desc: "Painting, custom feature walls and other home improvement services.",
     offer: "20% off interior painting services over $1,000" },
-  { name: "Cover Gals Blinds and Drapes", cat: 1, serves: ["Johnston", "Wake"], mobile: true, logo: "", url: "https://covergalsblinds.com/",
+  { name: "Cover Gals Blinds and Drapes", cat: 1, serves: ["Johnston", "Wake"], mobile: true, logo: "images/partners/cover-gals-blinds-and-drapes.webp", url: "https://covergalsblinds.com/",
     desc: "Blinds and drapes serving Johnston and Wake counties and surrounding communities.",
     offer: "Complimentary consult and 10% off window treatments" },
-  { name: "Style By Camara", cat: 1, town: "Raleigh", county: "Wake", mobile: true, logo: "", url: "http://styledbycamara.com",
+  { name: "Style By Camara", cat: 1, town: "Raleigh", county: "Wake", mobile: true, logo: "images/partners/style-by-camara.webp", url: "http://styledbycamara.com",
     desc: "Luxury residential interior design studio serving Raleigh and the surrounding area.",
     offer: "One complimentary 1 hour in-home design consultation", note: "Must be within 30 miles of North Raleigh." },
-  { name: "Bronwyn Drummond, Broker/Realtor", cat: 1, town: "Raleigh", county: "Wake", logo: "", url: "https://www.jimallen.com/agent/bronwyn-drummond/",
+  { name: "Bronwyn Drummond, Broker/Realtor", cat: 1, town: "Raleigh", county: "Wake", logo: "images/partners/bronwyn-drummond.webp", url: "https://www.jimallen.com/agent/bronwyn-drummond/",
     desc: "Real estate guidance through life's major transitions.",
     offer: "Complimentary comparative market analysis with no obligation", more: true },
-  { name: "The Ranch Garage Doors NC", cat: 1, town: "Wake Forest", county: "Wake", mobile: true, logo: "", url: "https://theranchgaragedoorsnc.com/",
+  { name: "The Ranch Garage Doors NC", cat: 1, town: "Wake Forest", county: "Wake", mobile: true, logo: "images/partners/the-ranch-garage-doors-nc.webp", url: "https://theranchgaragedoorsnc.com/",
     desc: "Locally owned and operated garage door company based in Wake Forest.",
     offer: "$75 off any garage door repair of $300 or more, and 10% off a new garage door installation (up to $250)", note: "One discount per service. Discounts cannot be combined." },
   { name: "Prestige Pour Epoxy", cat: 1, town: "", county: "", regional: true, mobile: true, logo: "", url: "https://www.facebook.com/share/1E7p8rCVGV/?mibextid=wwXIfr", urlLabel: "Visit on Facebook",
@@ -499,52 +503,52 @@ var PARTNERS = [
     offer: "$50 referral for flake epoxy jobs", more: true },
 
   /* Beauty & Self Care */
-  { name: "Zecor Studio", cat: 2, town: "Raleigh", county: "Wake", logo: "", url: "http://zecorstudio.com",
+  { name: "Zecor Studio", cat: 2, town: "Raleigh", county: "Wake", logo: "images/partners/zecor-studio.webp", url: "http://zecorstudio.com",
     desc: "A private hair experience built around you, in English and Spanish.",
     offer: "20% off blowouts or any hairstyle" },
-  { name: "Brows Are Us", cat: 2, town: "Raleigh", county: "Wake", logo: "", url: "https://browsareus.com/",
+  { name: "Brows Are Us", cat: 2, town: "Raleigh", county: "Wake", logo: "images/partners/brows-are-us.webp", url: "https://browsareus.com/",
     desc: "Clinically advanced aesthetics in a more personal studio experience.",
     offer: "$25 off any service of $75 or more, new and existing clients", note: "Once per member. Not combined with other discounts. Appointments required." },
-  { name: "The Sky Parlor", cat: 2, town: "Raleigh", county: "Wake", logo: "", url: "https://skyparlorsalon.com/",
+  { name: "The Sky Parlor", cat: 2, town: "Raleigh", county: "Wake", logo: "images/partners/the-sky-parlor.webp", url: "https://skyparlorsalon.com/",
     desc: "A salon built by hand by its owner and master stylist to make good hair easy.",
     offer: "One free conditioning treatment with any haircut or color service", note: "New clients have a complimentary consultation before a hair service." },
-  { name: "Blissful Nail Spa", cat: 2, town: "Raleigh", county: "Wake", logo: "", url: "https://www.facebook.com/profile.php?id=61594114119999", urlLabel: "Visit on Facebook",
+  { name: "Blissful Nail Spa", cat: 2, town: "Raleigh", county: "Wake", logo: "images/partners/blissful-nail-spa.webp", url: "https://www.facebook.com/profile.php?id=61594114119999", urlLabel: "Visit on Facebook",
     desc: "More than a nail salon: a beauty escape with expert care and luxurious treatments.",
     offer: "10% off all services over $50, Monday to Wednesday" },
   { name: "MaxD Hair at Salontology", cat: 2, town: "Raleigh", county: "Wake", logo: "", url: "https://www.instagram.com/maxd_hair/", urlLabel: "Visit on Instagram",
     desc: "A full range of hair services from Max Drummond.",
     offer: "New clients get $25 off their first haircut and color" },
-  { name: "Infinite Bodies NC", cat: 2, town: "Raleigh", county: "Wake", logo: "", url: "https://infinitebodiesnc.com/",
+  { name: "Infinite Bodies NC", cat: 2, town: "Raleigh", county: "Wake", logo: "images/partners/infinite-bodies-nc.webp", url: "https://infinitebodiesnc.com/",
     desc: "A holistic med spa in Raleigh.",
     offer: "25% off all services of $150 and up, and a $59 express HydraFacial", note: "Consultation and good faith exam required." },
-  { name: "Thairapy by Melanie", cat: 2, town: "Raleigh", county: "Wake", logo: "", url: "https://www.instagram.com/thairapybymelanie/", urlLabel: "Visit on Instagram",
+  { name: "Thairapy by Melanie", cat: 2, town: "Raleigh", county: "Wake", logo: "images/partners/thairapy-by-melanie.webp", url: "https://www.instagram.com/thairapybymelanie/", urlLabel: "Visit on Instagram",
     desc: "A licensed hairdresser with 30 years of experience.",
     offer: "$20 off a haircut and style with color or highlights", note: "Limit one service per customer." },
-  { name: "Skinsational Esthetics", cat: 2, town: "Wake Forest", county: "Wake", logo: "", url: "https://myskinsationalesthetics.com/",
+  { name: "Skinsational Esthetics", cat: 2, town: "Wake Forest", county: "Wake", logo: "images/partners/skinsational-esthetics.webp", url: "https://myskinsationalesthetics.com/",
     desc: "A results-driven, judgment-free skin care studio.",
     offer: "10% off for first time clients" },
 
   /* Food & Beverage */
-  { name: "Sweet Traditions Bakery", cat: 3, town: "Wake Forest", county: "Wake", logo: "", url: "https://www.spreadthesweetness.com/",
+  { name: "Sweet Traditions Bakery", cat: 3, town: "Wake Forest", county: "Wake", logo: "images/partners/sweet-traditions-bakery.webp", url: "https://www.spreadthesweetness.com/",
     desc: "Wake Forest's go-to spot for cupcakes, cookies and custom treats.",
     offer: "10% off in-store cupcake purchases", note: "Not valid with any other offer or discount." },
-  { name: "Fave Nutrition", cat: 3, town: "Wake Forest", county: "Wake", logo: "", url: "https://favenutrition.com/#home",
+  { name: "Fave Nutrition", cat: 3, town: "Wake Forest", county: "Wake", logo: "images/partners/fave-nutrition.webp", url: "https://favenutrition.com/#home",
     desc: "A locally owned nutrition and wellness community.",
     offer: "10% off regular price drinks, a complimentary 30 minute wellness profile and a free group fitness class", note: "Drink discount applies on every qualifying visit." },
-  { name: "The Messy Apron", cat: 3, town: "Raleigh", county: "Wake", logo: "", url: "https://themessyapron.com/",
+  { name: "The Messy Apron", cat: 3, town: "Raleigh", county: "Wake", logo: "images/partners/the-messy-apron.webp", url: "https://themessyapron.com/",
     desc: "Large bakery style cookies from a local twin mom.",
     offer: "10% off a first time new customer order", note: "Not valid with any other offers or discounts." },
 
   /* Family & Lifestyle */
-  { name: "The Fortified Doula, LLC", cat: 4, town: "", county: "", logo: "", url: "https://www.thefortifieddoula.com/",
+  { name: "The Fortified Doula, LLC", cat: 4, town: "", county: "", logo: "images/partners/the-fortified-doula.webp", url: "https://www.thefortifieddoula.com/",
     desc: "Education, support and personalized care through pregnancy, birth and the postpartum period.",
     offer: "$30 off placenta encapsulation services with a complimentary cord keepsake", note: "Valid with full adherence to placenta encapsulation policies and procedures." },
-  { name: "Wags 2 Whiskers", cat: 4, town: "", county: "", logo: "", url: "https://www.facebook.com/p/Wags2Whiskers-100040041679012/", urlLabel: "Visit on Facebook",
+  { name: "Wags 2 Whiskers", cat: 4, town: "", county: "", logo: "images/partners/wags-2-whiskers.webp", url: "https://www.facebook.com/p/Wags2Whiskers-100040041679012/", urlLabel: "Visit on Facebook",
     desc: "Boutique dog boarding, a home away from home for your dog.",
     offer: "Book 1 week of boarding and get 1 extra night free ($75 value)" },
 
   /* Shopping & Gifts */
-  { name: "The Y'ville Well Gift Shoppe", cat: 5, town: "Youngsville", county: "Franklin", logo: "", url: "https://www.theyvillewell.com/gift-shoppe",
+  { name: "The Y'ville Well Gift Shoppe", cat: 5, town: "Youngsville", county: "Franklin", logo: "images/partners/yville-well-gift-shoppe.webp", url: "https://www.theyvillewell.com/gift-shoppe",
     desc: "A gift shop inside The Y'Ville Well, stocked with gifts that carry intention.",
     offer: "10% off purchases", note: "Anima Mundi products excluded." }
 ];
@@ -814,8 +818,8 @@ function placeLabel() {
 }
 function cardHTML(p) {
   var tile = p.logo
-    ? '<div class="logo-tile"><img src="' + esc(p.logo) + '" alt="' + esc(p.name) + ' logo"></div>'
-    : '<div class="logo-tile" title="Logo placeholder" aria-hidden="true">' + esc(initials(p.name)) + '</div>';
+    ? '<div class="logo-banner"><img src="' + esc(p.logo) + '" alt="' + esc(p.name) + ' logo" loading="lazy"></div>'
+    : '<div class="logo-banner" title="Logo coming soon" aria-hidden="true"><span class="initials">' + esc(initials(p.name)) + '</span></div>';
   var where = p.regional
     ? '<span class="pin">Serves the Triangle and surrounding areas</span>'
     : p.serves
@@ -825,7 +829,7 @@ function cardHTML(p) {
         : '<span>Location coming soon</span>';
   if (p.mobile) where += '<span class="badge-mobile"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5M6 10v9h12v-9M10 19v-5h4v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Comes to you</span>';
   return '<article class="card"><div class="card-body">' +
-    '<div class="card-top">' + tile + '<div><h3>' + esc(p.name) + '</h3>' +
+    tile + '<div class="card-top"><div><h3>' + esc(p.name) + '</h3>' +
     '<div class="meta">' + where + '<span>' + esc(CATEGORIES[p.cat]) + '</span></div></div></div>' +
     '<p class="desc">' + esc(p.desc) + '</p>' +
     '<div class="offer"><span class="tag">Member benefit</span><p>' + esc(p.offer) + '</p>' +

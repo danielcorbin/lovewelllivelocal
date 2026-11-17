@@ -13,7 +13,7 @@ Static website for Love Well Connections (lovewellconnections.com). Plain HTML, 
 - `robots.txt` and `sitemap.xml`: SEO files (they assume the site lives at https://lovewellconnections.com/)
 
 ## Editing partners
-Open `local-partners.html` and find `var PARTNERS`. Each entry has a name, category, town, county, logo path, link, description and offer. Add a real logo by putting the image in a `logos/` folder and setting `logo: "logos/name.png"`. The partner list in the structured data near the top of the same file is for search engines, so update it when partners change.
+Open `local-partners.html` and find `var PARTNERS`. Each entry has a name, category, town, county, logo path, link, description and offer. Add a real logo by putting the image in the `images/partners/` folder and setting `logo: "images/partners/name.webp"`. Partners with no logo yet show their initials. The partner list in the structured data near the top of the same file is for search engines, so update it when partners change.
 
 ## Publishing with GitHub Pages
 1. Push these files to the root of a repository.
