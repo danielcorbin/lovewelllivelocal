@@ -197,7 +197,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
       <div class="sheet-inner">
         <h1>Become a Local Partner</h1>
         <p>Thank you for your interest in Love Well. Live Local. Participation is completely free. Tell us about your business and the member benefit you would like to offer, and we will follow up with the business agreement. Fields marked (required) must be filled in.</p>
-        <p>Want the details first? <a href="future-business-partners.html" target="_blank" rel="noopener">Learn more about being a local partner</a>.</p>
+        <p>Want the details first? <a href="future-business-partners.html">Learn more about being a local partner</a>.</p>
         <form id="partnerForm" class="pform" novalidate>
           <div class="hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
 
@@ -210,8 +210,8 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
           <fieldset>
             <legend>Contact information</legend>
             <p class="hint strong">Your email address and phone number are for internal use only. They will not be displayed on the website.</p>
-            <div class="field"><label for="email">Email <span class="req">(required)</span></label><input id="email" name="Email" type="email" required autocomplete="email"></div>
-            <div class="field"><label for="phone">Phone number <span class="req">(required)</span></label><input id="phone" name="Phone" type="tel" required autocomplete="tel"></div>
+            <div class="field"><label for="email">Email <span class="req">(required)</span></label><input id="email" name="Email" type="email" inputmode="email" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="254" placeholder="name@example.com" required autocomplete="email"></div>
+            <div class="field"><label for="phone">Phone number <span class="req">(required)</span></label><input id="phone" name="Phone" type="tel" inputmode="tel" maxlength="14" placeholder="(919) 555-1234" required autocomplete="tel"></div>
           </fieldset>
 
           <fieldset>
@@ -244,7 +244,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
 
           <fieldset>
             <legend>A few more things</legend>
-            <div class="field"><label for="member">Email of the person who should receive the complimentary membership</label><input id="member" name="Complimentary membership email" type="email" placeholder="name@example.com" autocomplete="off"><p class="hint">Each participating business can designate one person. Leave blank if it is the owner email above.</p></div>
+            <div class="field"><label for="member">Email of the person who should receive the complimentary membership</label><input id="member" name="Complimentary membership email" type="email" inputmode="email" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="254" placeholder="name@example.com" autocomplete="off"><p class="hint">Each participating business can designate one person. Leave blank if it is the owner email above.</p></div>
             <div class="field"><label for="how">How did you hear about Love Well. Live Local.?</label><input id="how" name="How they heard" type="text"></div>
             <div class="field"><label for="more">Anything else you would like us to know?</label><textarea id="more" name="Anything else" rows="3"></textarea></div>
             <div class="field"><label for="logo">Business logo</label><input id="logo" name="logo" type="file" accept="image/*,.pdf,.svg"></div>
@@ -254,7 +254,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
 
           <p class="form-error" id="formError" role="alert" hidden></p>
           <button class="btn btn-terra submit" type="submit">Submit my information</button>
-          <p class="hint">See our <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> to learn how we handle information.</p>
+          <p class="hint">See our <a href="privacy-policy.html">Privacy Policy</a> to learn how we handle information.</p>
         </form>
 
         <div class="thanks" id="thanks" hidden tabindex="-1">
@@ -278,13 +278,13 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
     <div class="foot-top">
       <a class="logo" href="index.html" aria-label="Love Well. Live Local. home" id="footerLogo"></a>
       <div class="foot-links">
-        <a href="local-partners.html" target="_blank" rel="noopener">Partner Directory</a>
-        <a href="faq.html" target="_blank" rel="noopener">FAQ</a>
-        <a href="contact.html" target="_blank" rel="noopener">Contact</a>
-        <a href="https://www.facebook.com/lovewelllivelocal" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.instagram.com/love_well_live_local/" target="_blank" rel="noopener">Instagram</a>
-        <a href="membership-terms.html" target="_blank" rel="noopener">Membership Terms</a>
-        <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="local-partners.html">Partner Directory</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.facebook.com/lovewelllivelocal">Facebook</a>
+        <a href="https://www.instagram.com/love_well_live_local/">Instagram</a>
+        <a href="membership-terms.html">Membership Terms</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
     <small>Copyright &copy; 2026 Love Well Connections. All rights reserved.</small>
@@ -299,6 +299,21 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
    While it is empty, the form opens a ready-to-send email to EMAIL_TO with everything filled in (a logo cannot be attached that way). */
 var FORM_ENDPOINT = "https://www.formbackend.com/f/7b08df539a22110b";
 var EMAIL_TO = "lovewellconnections@gmail.com";
+/* US phone: numeric keypad, formats as (919) 555-1234 while typing */
+function formatPhone(v) {
+  var d = String(v).replace(/\D/g, "");
+  if (d.length === 11 && d.charAt(0) === "1") d = d.slice(1);
+  d = d.slice(0, 10);
+  if (d.length > 6) return "(" + d.slice(0, 3) + ") " + d.slice(3, 6) + "-" + d.slice(6);
+  if (d.length > 3) return "(" + d.slice(0, 3) + ") " + d.slice(3);
+  if (d.length > 0) return "(" + d;
+  return "";
+}
+function validPhone(v) { return /^\(\d{3}\) \d{3}-\d{4}$/.test(v); }
+[].forEach.call(document.querySelectorAll('input[type="tel"]'), function (p) {
+  p.addEventListener("input", function () { p.value = formatPhone(p.value); });
+  p.addEventListener("blur", function () { p.value = formatPhone(p.value); });
+});
 (function () {
   var form = document.getElementById("partnerForm"), thanks = document.getElementById("thanks");
   var otherBox = document.getElementById("catOther"), otherField = document.getElementById("otherField");
@@ -329,12 +344,13 @@ var EMAIL_TO = "lovewellconnections@gmail.com";
     if (physBox.checked && !val("office")) return showError("Please enter the location of your office.", document.getElementById("office"));
     if (homeBox.checked && !val("areas")) return showError("Please tell us the areas you cover and do work in.", document.getElementById("areas"));
     var em = document.getElementById("email");
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val("email"))) return showError("That email address does not look right. Please check it.", em);
+    if (!/^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$/.test(val("email"))) return showError("That email address does not look right. Please check it.", em);
+    if (!validPhone(val("phone"))) return showError("Please enter a 10 digit US phone number, like (919) 555-1234.", document.getElementById("phone"));
     var cats = checked("category");
     if (otherBox.checked) { if (!val("catOtherText")) return showError("Please write in your other category.", document.getElementById("catOtherText")); cats.push("Other: " + val("catOtherText")); }
     if (!cats.length) return showError("Please choose at least one category.", form.querySelector('input[name="category"]'));
     var memberEmail = val("member");
-    if (memberEmail && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(memberEmail)) return showError("The email for the complimentary membership does not look right. Please check it.", document.getElementById("member"));
+    if (memberEmail && !/^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$/.test(memberEmail)) return showError("The email for the complimentary membership does not look right. Please check it.", document.getElementById("member"));
     var logoFile = document.getElementById("logo").files[0];
     if (logoFile && logoFile.size > 5 * 1024 * 1024) return showError("That logo file is larger than 5 MB. Please choose a smaller file, or email it to us instead.", document.getElementById("logo"));
     if (!document.getElementById("ack").checked) return showError("Please check the box to confirm you understand how your listing will be used.", document.getElementById("ack"));

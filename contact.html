@@ -204,7 +204,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
       <div class="sheet-inner">
         <h1>Contact Us</h1>
         <p>Have a question about membership, a local partner, or anything else? Send us a message and we will get back to you. Fields marked (required) must be filled in.</p>
-        <p>Looking for quick answers? Try the <a href="faq.html" target="_blank" rel="noopener">frequently asked questions</a>. Want to join as a business? Use the <a href="partner-application.html" target="_blank" rel="noopener">partner form</a>.</p>
+        <p>Looking for quick answers? Try the <a href="faq.html">frequently asked questions</a>. Want to join as a business? Use the <a href="partner-application.html">partner form</a>.</p>
         <div class="social" aria-label="Social media">
           <span class="social-label">Find us on social media:</span>
           <a class="social-link" href="https://www.facebook.com/lovewelllivelocal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5H16l.5-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"/></svg><span>Facebook</span></a>
@@ -215,8 +215,8 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
           <fieldset>
             <legend>Your message</legend>
             <div class="field"><label for="cName">Your name <span class="req">(required)</span></label><input id="cName" type="text" required autocomplete="name"></div>
-            <div class="field"><label for="cEmail">Email <span class="req">(required)</span></label><input id="cEmail" type="email" required autocomplete="email"></div>
-            <div class="field"><label for="cPhone">Phone number</label><input id="cPhone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="cEmail">Email <span class="req">(required)</span></label><input id="cEmail" type="email" inputmode="email" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="254" placeholder="name@example.com" required autocomplete="email"></div>
+            <div class="field"><label for="cPhone">Phone number</label><input id="cPhone" type="tel" inputmode="tel" maxlength="14" placeholder="(919) 555-1234" autocomplete="tel"></div>
             <div class="field"><label for="cTopic">What is your message about? <span class="req">(required)</span></label>
               <select id="cTopic" required>
                 <option value="">Choose one</option>
@@ -232,7 +232,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
           </fieldset>
           <p class="form-error" id="cError" role="alert" hidden></p>
           <button class="btn btn-terra submit" type="submit">Send message</button>
-          <p class="hint">See our <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> to learn how we handle information.</p>
+          <p class="hint">See our <a href="privacy-policy.html">Privacy Policy</a> to learn how we handle information.</p>
         </form>
         <div class="thanks" id="cThanks" hidden tabindex="-1">
           <h2>Thank you!</h2>
@@ -252,13 +252,13 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
     <div class="foot-top">
       <a class="logo" href="index.html" aria-label="Love Well. Live Local. home" id="footerLogo"></a>
       <div class="foot-links">
-        <a href="local-partners.html" target="_blank" rel="noopener">Partner Directory</a>
-        <a href="faq.html" target="_blank" rel="noopener">FAQ</a>
-        <a href="contact.html" target="_blank" rel="noopener">Contact</a>
-        <a href="https://www.facebook.com/lovewelllivelocal" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.instagram.com/love_well_live_local/" target="_blank" rel="noopener">Instagram</a>
-        <a href="membership-terms.html" target="_blank" rel="noopener">Membership Terms</a>
-        <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="local-partners.html">Partner Directory</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.facebook.com/lovewelllivelocal">Facebook</a>
+        <a href="https://www.instagram.com/love_well_live_local/">Instagram</a>
+        <a href="membership-terms.html">Membership Terms</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
     <small>Copyright &copy; 2026 Love Well Connections. All rights reserved.</small>
@@ -273,6 +273,21 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
    While it is empty, the form opens a ready-to-send email to EMAIL_TO with everything filled in. */
 var CONTACT_ENDPOINT = "https://formspree.io/f/xgakoloq";
 var EMAIL_TO = "lovewellconnections@gmail.com";
+/* US phone: numeric keypad, formats as (919) 555-1234 while typing */
+function formatPhone(v) {
+  var d = String(v).replace(/\D/g, "");
+  if (d.length === 11 && d.charAt(0) === "1") d = d.slice(1);
+  d = d.slice(0, 10);
+  if (d.length > 6) return "(" + d.slice(0, 3) + ") " + d.slice(3, 6) + "-" + d.slice(6);
+  if (d.length > 3) return "(" + d.slice(0, 3) + ") " + d.slice(3);
+  if (d.length > 0) return "(" + d;
+  return "";
+}
+function validPhone(v) { return /^\(\d{3}\) \d{3}-\d{4}$/.test(v); }
+[].forEach.call(document.querySelectorAll('input[type="tel"]'), function (p) {
+  p.addEventListener("input", function () { p.value = formatPhone(p.value); });
+  p.addEventListener("blur", function () { p.value = formatPhone(p.value); });
+});
 (function () {
   var form = document.getElementById("contactForm"), thanks = document.getElementById("cThanks");
   function val(id) { return (document.getElementById(id).value || "").trim(); }
@@ -287,7 +302,8 @@ var EMAIL_TO = "lovewellconnections@gmail.com";
     if (form.elements["company_website"].value) return; /* spam trap */
     if (!val("cName")) return showError("Please enter your name.", document.getElementById("cName"));
     if (!val("cEmail")) return showError("Please enter your email address.", document.getElementById("cEmail"));
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val("cEmail"))) return showError("That email address does not look right. Please check it.", document.getElementById("cEmail"));
+    if (!/^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$/.test(val("cEmail"))) return showError("That email address does not look right. Please check it.", document.getElementById("cEmail"));
+    if (val("cPhone") && !validPhone(val("cPhone"))) return showError("Please enter a 10 digit US phone number, like (919) 555-1234, or leave it blank.", document.getElementById("cPhone"));
     if (!val("cTopic")) return showError("Please choose what your message is about.", document.getElementById("cTopic"));
     if (!val("cMessage")) return showError("Please write a message.", document.getElementById("cMessage"));
     var text = ["NEW MESSAGE FROM THE WEBSITE", "", "Name: " + val("cName"), "Email: " + val("cEmail"), "Phone: " + (val("cPhone") || "Not given"), "About: " + val("cTopic"), "", "Message:", val("cMessage")].join("\n");
