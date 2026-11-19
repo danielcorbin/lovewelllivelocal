@@ -186,6 +186,7 @@ section { padding: 64px 0; }
 .pull { background: var(--navy); color: var(--paper); padding: clamp(28px, 4vw, 44px); border: 8px double var(--sage); display: grid; gap: 14px; align-content: center; min-height: 100%; }
 .pull .big { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; }
 .pull .script { font-family: var(--font-script); font-size: 2rem; color: #e9c9bd; }
+.pull-logo { display: block; width: min(100%, 260px); height: auto; margin-bottom: 4px; }
 .story-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr) minmax(0, 0.8fr); gap: clamp(22px, 3vw, 40px); align-items: stretch; }
 .story-grid .pull { min-height: 0; align-content: start; padding: clamp(24px, 2.6vw, 34px); }
 .story-grid .pull .big { font-size: clamp(1.25rem, 1.9vw, 1.6rem); }
@@ -409,7 +410,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
 <section id="story" class="band">
   <div class="wrap story-grid">
     <div class="pull pull-love">
-      <span class="script">Love Well.</span>
+      <img class="pull-logo" src="images/lovewell-script-light.webp" alt="Love Well." width="260" height="89">
       <p class="big">Our hope is to help you create meaningful connections in your community, so you can focus on what matters most: loving well.</p>
       <p>The first membership community is open in Raleigh and neighboring towns, with more North Carolina communities planned as the program grows.</p>
     </div>
@@ -425,7 +426,7 @@ footer { background: var(--navy); color: var(--paper); padding: 44px 0 30px; }
       </div>
     </div>
     <div class="pull pull-local">
-      <span class="script">Live Local.</span>
+      <img class="pull-logo" src="images/livelocal-serif-light.webp" alt="Live Local." width="260" height="33">
       <p class="big">Every purchase at a neighborhood business supports a local livelihood, a dream, and the community we share.</p>
       <p>Participating businesses are independently owned, from health and wellness to hair, home services, bakeries and more.</p>
     </div>
@@ -525,7 +526,7 @@ var LOGO_DARK  = "images/logo-dark.webp";
 var LOGO_LIGHT = "images/logo-light.webp";
 
 function wordmarkHTML() {
-  return '<span class="wordmark"><span class="script">Love Well.</span>' +
+  return '<span class="wordmark"><img class="pull-logo" src="images/lovewell-script-light.webp" alt="Love Well." width="260" height="89">' +
     '<svg aria-hidden="true"><use href="#compass"/></svg>' +
     '<span class="caps">LIVE LOCAL.</span></span>';
 }
