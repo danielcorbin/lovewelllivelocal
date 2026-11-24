@@ -580,7 +580,7 @@ var TAGS = {
   "Reclaim Holistic": "nutritionist, dietitian, nutrition coach, diet, healthy eating, weight loss, gut health, meal planning, food, holistic nutrition, health coach",
   "Health with Hope": "massage, massage therapist, lymphatic massage, lymph drainage, swelling, detox, bodywork, relax, in home, mobile massage, spa, therapy",
   "BioPeak Health": "provider, clinic, functional medicine, root cause, brain health, longevity, performance, medical provider, healthcare, integrative, care plan",
-  "Golden Ginkgo": "reflexology, foot massage, reiki, energy healing, relax, stress relief, woman owned, spa, holistic, feet",
+  "Golden Ginkgo": "reflexology, foot therapy, reiki, energy healing, relax, stress relief, woman owned, spa, holistic, feet",
   "Divine Light Energy Healing": "reiki, energy healing, hypnosis, hypnotherapy, past life regression, soul alignment, spiritual, meditation, stress relief, holistic",
   "Divine Holistic Wellness": "massage, mobility, bodywork, sore muscles, back pain, stiffness, deep tissue, massage therapist, stretching, pain relief",
   "Massage at Logger": "massage, massage therapist, swedish massage, deep tissue, trigger point, prenatal massage, pregnancy massage, myofascial, cupping, medi-cupping, women, bodywork, sore muscles, back pain, relax, stress relief, spa, licensed massage therapist, LMBT",
@@ -614,7 +614,9 @@ var CONCEPTS = [
   ["doctor", "doctors", "physician", "md", "provider", "clinician", "practitioner", "nurse practitioner", "np", "primary care", "family medicine", "family doctor", "pcp", "clinic", "medical", "medicine", "healthcare", "health care", "checkup", "physical", "telehealth", "telemedicine", "appointment"],
   ["hormone", "hormones", "testosterone", "estrogen", "menopause", "thyroid", "hrt", "hormone therapy"],
   ["weight loss", "weight management", "diet", "dieting", "nutrition", "nutritionist", "dietitian", "healthy eating", "meal plan", "lose weight"],
-  ["massage", "bodywork", "masseuse", "massage therapist", "deep tissue", "sore", "back pain", "pain", "stiffness", "mobility", "physical therapy", "physical therapist", "pt", "rehab", "injury", "chiropractor", "chiropractic", "therapist", "therapy"],
+  ["massage", "masseuse", "massage therapist", "bodywork", "deep tissue", "swedish", "trigger point", "myofascial", "cupping", "lymphatic"],
+  ["pain", "sore", "back pain", "stiffness", "mobility", "injury", "physical therapy", "physical therapist", "pt", "rehab", "chiropractor", "chiropractic", "massage", "deep tissue"],
+  ["reflexology", "foot massage", "feet", "foot therapy"],
   ["relax", "relaxation", "stress", "stress relief", "calm", "peace", "reiki", "energy healing", "meditation", "sound healing", "self care", "anxiety"],
   ["reiki", "energy healing", "hypnosis", "hypnotherapy", "spiritual", "soul", "past life", "intuitive", "holistic", "alternative", "energy"],
   ["hair", "haircut", "hair cut", "hair cuts", "haircuts", "hairdresser", "hairstylist", "stylist", "salon", "barber", "blowout", "color", "highlights", "balayage", "trim"],
@@ -741,6 +743,9 @@ function runSearch(q) {
     return { p: p, s: total, all: all, vias: vias };
   });
   var found = scored.filter(function (x) { return x.all; });
+  /* If anyone matches the typed words themselves, show only those. Related words are a fallback. */
+  var direct = found.filter(function (x) { return x.vias.length === 0; });
+  if (direct.length) found = direct;
   var approx = false;
   if (!found.length) { found = scored.filter(function (x) { return x.s > 0; }); approx = found.length > 0; }
   found.sort(function (a, b) { return b.s - a.s; });
